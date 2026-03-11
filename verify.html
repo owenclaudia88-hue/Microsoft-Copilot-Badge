@@ -1,56 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Badge Verification</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7fb;
-      color: #222;
-      margin: 0;
-      padding: 40px 20px;
-    }
-    .card {
-      max-width: 760px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      padding: 32px;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    .row {
-      margin: 10px 0;
-      line-height: 1.7;
-    }
-    .row strong {
-      display: inline-block;
-      min-width: 180px;
-    }
-    .valid {
-      color: #2e7d32;
-      font-weight: 700;
-      margin-top: 16px;
-    }
-  </style>
+
+<meta charset="UTF-8">
+
+<title>Badge Verification</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+max-width:700px;
+margin:auto;
+}
+
+.valid{
+color:#2e7d32;
+font-weight:bold;
+margin-top:20px;
+}
+
+.row{
+margin:10px 0;
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="card">
-    <h1>Badge Verification</h1>
 
-    <div class="row"><strong>Status:</strong> Valid</div>
-    <div class="row"><strong>Badge name:</strong> Microsoft Copilot Chat apmācības publiskajam sektoram | MS-4023</div>
-    <div class="row"><strong>Issued by:</strong> Bittnet Training</div>
-    <div class="row"><strong>Technology partner:</strong> Microsoft</div>
-    <div class="row"><strong>Certificate ID:</strong> BTN-MS4023-2026-001</div>
-    <div class="row"><strong>Issue year:</strong> 2026</div>
-    <div class="row"><strong>Badge page:</strong> <a href="index.html">Open badge</a></div>
+<div class="card">
 
-    <p class="valid">This credential has been issued by Bittnet Training and is currently valid.</p>
-  </div>
+<h1>Badge Verification</h1>
+
+<div class="row">
+<b>Status:</b> Valid
+</div>
+
+<div class="row">
+<b>Badge:</b> Microsoft Copilot Chat apmācības publiskajam sektoram | MS-4023
+</div>
+
+<div class="row">
+<b>Issued by:</b> Bittnet Training
+</div>
+
+<div class="row">
+<b>Technology Partner:</b> Microsoft
+</div>
+
+<div class="row">
+<b>Year:</b> 2026
+</div>
+
+<div class="row">
+<b>Certificate ID:</b>
+<span id="cert"></span>
+</div>
+
+<p class="valid">
+This credential has been issued by Bittnet Training.
+</p>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+
+const certID = params.get("id")
+
+document.getElementById("cert").innerText = certID
+
+</script>
+
 </body>
+
 </html>
